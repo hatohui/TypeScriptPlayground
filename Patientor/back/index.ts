@@ -1,5 +1,4 @@
 //apply domain-driven design where we separate the logic from the router to services
-
 import express from "express";
 import diagnoseRouter from "./Routes/diagnosesRouter";
 import patientRouter from "./Routes/patientsRouter";

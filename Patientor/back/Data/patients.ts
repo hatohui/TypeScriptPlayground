@@ -1,6 +1,7 @@
 import { Patient } from "../types";
+import { NewPatientEntrySchema } from "../utils";
 
-const patientData: Patient[] = [
+const patientData = [
   {
     id: "d2773336-f723-11e9-8f0b-362b9e155667",
     name: "John McClane",
@@ -43,4 +44,10 @@ const patientData: Patient[] = [
   },
 ];
 
-export default patientData;
+const patientEntries: Patient[] = patientData.map((each) => {
+  const object = NewPatientEntrySchema.parse(each) as Patient;
+  object.id = each.id;
+  return object;
+});
+
+export default patientEntries;
